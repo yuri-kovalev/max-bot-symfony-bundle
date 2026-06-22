@@ -38,15 +38,15 @@ final class MaxBotSubscriptionsCommand extends AbstractMaxBotCommand
 
                     return [
                         $subscription->getUrl(),
-                        $subscription->getTime()->format('Y-m-d H:i:s'),
                         $subscription->getVersion() ?? '-',
                         $rawTypes === null || $rawTypes === [] ? 'all' : implode(', ', $rawTypes),
+                        $subscription->getTime()->format('Y-m-d H:i:s'),
                     ];
                 },
                 $subscriptions,
             );
 
-            $io->table(['url', 'created_at', 'version', 'update_types'], $rows);
+            $io->table(['url', 'version', 'update_types', 'created_at'], $rows);
         } catch (\Throwable $exception) {
             return $this->renderException($io, $exception);
         }
