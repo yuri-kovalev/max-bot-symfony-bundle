@@ -13,7 +13,7 @@
 ## Установка
 
 ```bash
-composer require it-koval/max-bot-symfony-bundle
+composer require yuri-kovalev/max-bot-symfony-bundle
 ```
 
 ## Регистрация бандла
@@ -36,7 +36,7 @@ return [
 ```yaml
 max_bot:
   access_token: '%env(MAX_BOT_ACCESS_TOKEN)%'
-  webhook_secret: '%env(default::MAX_BOT_WEBHOOK_SECRET)%'
+  webhook_secret: '%env(MAX_BOT_WEBHOOK_SECRET)%'
   base_url: 'https://platform-api.max.ru'
   connect_timeout: 5000
   timeout: 10000
